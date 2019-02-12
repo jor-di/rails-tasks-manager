@@ -1,0 +1,17 @@
+<h1><%= @task.title %></h1>
+<div>
+  <%= button_to "Edit", edit_path, method: :get %>
+</div>
+
+<p><%= @task.details %></p>
+
+<div style="margin-bottom: 20px">
+  <% if @task.completed %>
+    <input type="checkbox" onclick="return false;" id="<%= @task.title %>" checked>
+    <label for="<%= @task.title %>">This task is completed</label>
+  <% else %>
+    <input type="checkbox" onclick="return false;" id="<%= @task.title %>">
+    <label for="<%= @task.title %>">This task is not done yet</label>
+  <% end %>
+</div>
+<%= link_to "Return to Tasks displayer", tasks_path %>
